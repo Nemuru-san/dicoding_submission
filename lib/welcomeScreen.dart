@@ -13,13 +13,15 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              width: 320,
-              height: 500,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/img2.jpg'),
-                  fit: BoxFit.cover,
+            Expanded(
+              child: Container(
+                width: 320,
+                height: 400,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/img2.jpg'),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),

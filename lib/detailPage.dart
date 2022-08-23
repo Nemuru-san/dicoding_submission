@@ -8,7 +8,7 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget headerMenu() {
       return Container(
-        margin: EdgeInsets.all(defaultMargin),
+        padding: EdgeInsets.all(defaultMargin),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -63,13 +63,16 @@ class DetailPage extends StatelessWidget {
               height: 30,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "Mixed Fruit Juice",
-                  style: blackTextStyle.copyWith(
-                    fontSize: 30,
-                    fontWeight: semiBold,
+                Expanded(
+                  child: Text(
+                    "Mixed Fruit Juice",
+                    style: blackTextStyle.copyWith(
+                      fontSize: 30,
+                      fontWeight: semiBold,
+                    ),
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 const Liked()
@@ -145,11 +148,13 @@ class DetailPage extends StatelessWidget {
     }
 
     return Scaffold(
-        body: ListView(
-      children: [
-        headerMenu(),
-        detail(),
-      ],
+        body: SafeArea(
+      child: ListView(
+        children: [
+          headerMenu(),
+          detail(),
+        ],
+      ),
     ));
   }
 }
